@@ -19,9 +19,9 @@ const FeaturedProduct = () => {
           className="featured_image"
         />
         <h3 className="featured_product_title">{featuredProduct.title}</h3>
-        <p className="featured_product_price">${featuredProduct.price}</p>
+        <p className="featured_product_price">Ksh.{featuredProduct.price * 120}</p>
         <p className="featured_product_description">{featuredProduct.description}</p>
-        <button className="button">Shop Now</button>
+        <a href="#products" className="button">Shop Now</a>
       </div>
     </div>
   );

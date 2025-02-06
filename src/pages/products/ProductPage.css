@@ -42,7 +42,7 @@
     margin-top: var(--mb-0-5);
   }
   
-  .review_form {
+  /* .review_form {
     margin-top: var(--mb-2);
     display: flex;
     flex-direction: column;
@@ -86,4 +86,4 @@
   
   .review_form button:hover {
     background-color: var(--title-color-dark);
-  }
+  } */

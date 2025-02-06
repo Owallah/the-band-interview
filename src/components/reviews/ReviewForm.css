@@ -1,0 +1,51 @@
+.review_form {
+    /* max-width: 600px; */
+    margin: 0.5rem auto;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review_form h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .star_rating {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+  
+  .star {
+    cursor: pointer;
+    font-size: 2rem;
+    transition: color 0.2s ease;
+  }
+  
+  .star:hover,
+  .star:focus {
+    color: #ffc107;
+  }
+  
+  .review_text_area {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    resize: none;
+    min-height: 100px;
+  }
+  
+  .review_submit_button {
+    display: block;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .review_submit_button:hover {
+    background-color: #0056b3;
+  }
