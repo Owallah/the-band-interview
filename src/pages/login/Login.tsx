@@ -13,7 +13,7 @@ const Login = () => {
     const handleLoging = (e: React.FormEvent) => {
         e.preventDefault()
         if (login(email, password)) {
-            navigate("/admin")
+            navigate("/admin/dashboard")
         } else {
             setError("Wrong Password or Email")
         }

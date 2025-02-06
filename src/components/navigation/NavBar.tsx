@@ -5,6 +5,7 @@ import { useState } from "react"
 import { Link, useNavigate } from "react-router"
 import { useAuthStore } from "../../context/useAuthStore"
 import { useCartStore } from "../../context/useCartStore"
+import { deepOrange } from "@mui/material/colors"
 
 const NavBar = () => {
     const {cart} = useCartStore()
@@ -19,7 +20,7 @@ const NavBar = () => {
     <header className='header'>
         <nav className='nav container flexCenterSpaceBtwn'>
             <a href="index.html" className='nav_logo'>
-                <Avatar alt='The Band' />
+                <Avatar sx={{ bgcolor: deepOrange[500] }}>TB</Avatar>
             </a>
 
             <div className= "nav_menu">
@@ -44,7 +45,7 @@ const NavBar = () => {
                                     Logout
                                 </Link>
                             ) : (
-                                <Link to="/admin">
+                                <Link to="/admin/dashboard">
                                     <div className="nav_icon">
                                         <AdminPanelSettings />
                                     </div>
