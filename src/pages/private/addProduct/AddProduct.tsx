@@ -1,0 +1,101 @@
+import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router";
+import "./AddProduct.css";
+import { addNewProduct } from "../../../utils/api/Api";
+import { useState } from "react";
+import { useProductStore } from "../../../context/useProductStore";
+
+const AddProduct = () => {
+  const navigate = useNavigate();
+  const { addProduct } = useProductStore()
+
+  const [product, setProduct] = useState({
+    title: "",
+    price: 0,
+    description: "",
+    image: "",
+    category: "",
+    rating: {
+      rate: 0,
+      count: 0
+    }
+  });
+
+  const addMutation = useMutation({
+    mutationFn: addNewProduct,
+    onSuccess: (data) => {
+      addProduct(data)
+      navigate("/admin/dashboard");
+    },
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    addMutation.mutate(product);
+  };
+
+  return (
+    <div className="container section">
+      <h1>Add New Product</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Title:
+          <input
+            type="text"
+            value={product.title}
+            onChange={(e) =>
+              setProduct({ ...product, title: e.target.value })
+            }
+            required
+          />
+        </label>
+        <label>
+          Price:
+          <input
+            type="number"
+            value={product.price}
+            onChange={(e) =>
+              setProduct({ ...product, price: +e.target.value })
+            }
+            required
+          />
+        </label>
+        <label>
+          Description:
+          <textarea
+            value={product.description}
+            onChange={(e) =>
+              setProduct({ ...product, description: e.target.value })
+            }
+            required
+          />
+        </label>
+        <label>
+          Image URL:
+          <input
+            type="text"
+            value={product.image}
+            onChange={(e) =>
+              setProduct({ ...product, image: e.target.value })
+            }
+            required
+          />
+        </label>
+        <label>
+          Category:
+          <input
+            type="text"
+            value={product.category}
+            onChange={(e) =>
+              setProduct({ ...product, category: e.target.value })
+            }
+            required
+          />
+        </label>
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  );
+};
+
+export default AddProduct;
