@@ -50,3 +50,30 @@
     border-radius: 50%;
     cursor: pointer;
   }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  
+  .search_input,
+  .filter_select,
+  .sort_select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+  
+  .search_input {
+    flex: 1;
+    max-width: 300px;
+  }
+  
+  .filter_select,
+  .sort_select {
+    width: 200px;
+  }
+  

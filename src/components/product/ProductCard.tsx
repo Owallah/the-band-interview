@@ -8,6 +8,11 @@ interface ProductCardProps {
     title: string;
     price: number;
     image: string;
+    category: string
+    rating: {
+      rate: number,
+      count: number
+    }
   };
 }
 
@@ -26,7 +31,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
       <h2 className="product_name" onClick={() => navigate(`/product/${product.id}`)}>
         {product.title}
       </h2>
-      <p className="product_price">${product.price}</p>
+      <p className="product_price">Ksh.{product.price * 120}</p>
+      <p className="product_rating">Rating:{product.rating.rate} ({product.rating.count})</p>
+      <p className="product_category">{product.category}</p>
       <div
         className="add_to_cart_button flexCenter"
         onClick={() =>

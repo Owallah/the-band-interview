@@ -1,5 +1,4 @@
-/* ProductPage.css */  
-  .product_details {
+   .product_details {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -8,6 +7,7 @@
     border-radius: 0.5rem;
     padding: var(--mb-2);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 4rem;
   }
   
   .product_image {
@@ -41,49 +41,30 @@
     color: var(--text-color);
     margin-top: var(--mb-0-5);
   }
+
+  .reviews_section {
+    margin-top: 2rem;
+  }
   
-  /* .review_form {
-    margin-top: var(--mb-2);
-    display: flex;
-    flex-direction: column;
-    gap: var(--mb-1);
-    background-color: var(--container-color);
-    padding: var(--mb-1-5);
+  .reviews_section h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .review {
+    background-color: #f9f9f9;
+    padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .review_form label {
-    font-size: var(--normal-font-size);
-    color: var(--title-color);
+  .review_rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
   }
   
-  .review_form select,
-  .review_form textarea {
-    width: 100%;
-    padding: var(--mb-0-5);
-    border-radius: 0.25rem;
-    border: 1px solid var(--text-color);
-    font-size: var(--normal-font-size);
-    color: var(--text-color);
+  .review_comment {
+    margin: 0;
+    color: #333;
   }
-  
-  .review_form textarea {
-    resize: vertical;
-    min-height: 100px;
-  }
-  
-  .review_form button {
-    background-color: var(--title-color);
-    color: var(--container-color);
-    padding: var(--mb-0-75) var(--mb-1-5);
-    border-radius: 0.25rem;
-    font-size: var(--normal-font-size);
-    font-weight: var(--font-medium);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .review_form button:hover {
-    background-color: var(--title-color-dark);
-  } */
