@@ -1,9 +1,9 @@
-# Product Page - React App
+# [Owallah" Shop](https://the-band-interview.vercel.app/)
 
 ## 1. Project Overview
 This project is a product page built using React, React Query, and TypeScript. It fetches product details from the [Fake Store Api](https://fakestoreapi.com/products), displays them, and allows users to rate and review products. The project implements:
 
-- An interactive cart icon with item counter.
+- An interactive cart icon with an item counter.
 - Featured product highlights and offers.
 - Fetching product data using React Query.
 - Product searching, filtering/sorting.
@@ -30,10 +30,10 @@ Ensure you have the following installed:
 - npm or yarn package manager
 
 ### Cloning the Repository
-<!-- ```sh
-git clone 
+```sh
+git clone https://github.com/Owallah/the-band-interview.git
 cd product-page
-``` -->
+``` 
 
 ## 3. Dependency Installation Steps
 Install required dependencies:
