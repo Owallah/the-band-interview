@@ -11,16 +11,17 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer_container">
-        <h1 className="footer_title">Owallah</h1>
+        <h1 className="footer_title">Owallah's Shop</h1>
+        <h3 className="footer_sub_title">Your number one stop shop for all your household needs</h3>
         <ul className="footer_list">
           <li>
             <a href="#" className="footer_link">
-              About
+              About Us
             </a>
           </li>
           <li>
             <a href="#" className="footer_link">
-              Skills
+              Careers
             </a>
           </li>
           <li>
@@ -29,7 +30,7 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="footer_link">
+            <a href="https://owallah-portfolio.vercel.app/" className="footer_link">
               Portfolio
             </a>
           </li>
@@ -39,6 +40,10 @@ const Footer = () => {
             </a>
           </li>
         </ul>
+
+        <div className="footer_contact">
+          Get in touch with us:
+        </div>
         <div className="footer_socials">
           <a
             href="https://x.com/ElkinTradingKe"
