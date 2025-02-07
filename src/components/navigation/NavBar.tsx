@@ -19,9 +19,9 @@ const NavBar = () => {
   return (
     <header className='header'>
         <nav className='nav container flexCenterSpaceBtwn'>
-            <a href="index.html" className='nav_logo'>
+            <Link to="/" className='nav_logo'>
                 <Avatar src={Logo}>O</Avatar>
-            </a>
+            </Link>
 
             <div className= "nav_menu">
                 <ul className="nav_list">
