@@ -18,7 +18,7 @@ const InventoryStatusChart = () => {
           dataKey="stock"
           nameKey="name"
         >
-          {inventoryData.map((entry, index) => (
+          {inventoryData.map((_entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
