@@ -87,7 +87,7 @@ img {
 }
 
 .section {
-  padding: 6rem 0 2rem;
+  padding: 6rem 0 1rem;
 }
 
 .section_title {
@@ -106,7 +106,7 @@ img {
 }
 
 .container {
-  max-width: 968px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }

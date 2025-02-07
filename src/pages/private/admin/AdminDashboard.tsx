@@ -40,27 +40,24 @@ const AdminDashboard = () => {
     deleteMutation.mutate(id);
   };
 
-  // if (isLoading) return <div>Loading...</div>;
-  // if (isError) return <div>Error: {error?.message}</div>;
-
   return (
     <div className="container section">
-      <div
-        className="add_product_button button"
-        onClick={() => navigate("/admin/add/product")}
-      >
-        <AddOutlined /> Add Product
-      </div>
 
-      <div className="analytics_section flexCenter">
+      <div className="analytics_section">
         <h2>Analytics</h2>
-        <div className="charts_container">
+        <div className="charts_container flexCenter">
           <SalesPerformanceChart />
           <ProductComparisonChart />
           <InventoryStatusChart />
         </div>
       </div>
 
+      <div
+        className="add_product_button button"
+        onClick={() => navigate("/admin/add/product")}
+      >
+        <AddOutlined /> Add Product
+      </div>
       <table>
         <thead>
           <tr>

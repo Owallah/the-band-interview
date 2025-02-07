@@ -37,10 +37,11 @@ const AddProduct = () => {
   return (
     <div className="container section">
       <h1>Add New Product</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="add_product_form">
         <label>
           Title:
           <input
+          className="add_product_input"
             type="text"
             value={product.title}
             onChange={(e) =>
@@ -52,6 +53,7 @@ const AddProduct = () => {
         <label>
           Price:
           <input
+          className="add_product_input"
             type="number"
             value={product.price}
             onChange={(e) =>
@@ -63,6 +65,7 @@ const AddProduct = () => {
         <label>
           Description:
           <textarea
+          className="add_product_input_textarea"
             value={product.description}
             onChange={(e) =>
               setProduct({ ...product, description: e.target.value })
@@ -73,6 +76,7 @@ const AddProduct = () => {
         <label>
           Image URL:
           <input
+          className="add_product_input"
             type="text"
             value={product.image}
             onChange={(e) =>
@@ -84,6 +88,7 @@ const AddProduct = () => {
         <label>
           Category:
           <input
+          className="add_product_input"
             type="text"
             value={product.category}
             onChange={(e) =>
@@ -92,7 +97,7 @@ const AddProduct = () => {
             required
           />
         </label>
-        <button type="submit">Add Product</button>
+        <button type="submit" className="add_product_button button">Add Product</button>
       </form>
     </div>
   );

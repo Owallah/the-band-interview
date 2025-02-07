@@ -1,30 +1,95 @@
-# React + TypeScript + Vite
+# Product Page - React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1. Project Overview
+This project is a product page built using React, React Query, and TypeScript. It fetches product details from the [Fake Store Api](https://fakestoreapi.com/products), displays them, and allows users to rate and review products. The project implements:
 
-Currently, two official plugins are available:
+- An interactive cart icon with item counter.
+- Featured product highlights and offers.
+- Fetching product data using React Query.
+- Product searching, filtering/sorting.
+- A star rating system for users to rate products.
+- A review submission form with real-time updates.
+- Admin authentication use:`admin@admin.com` as email and `password` as password
+- Error handling
+- Form validation
+- Auth state management with Zustand
+- Admin dashboard with analytics.
+- Admin product management. Applies the `CRUD` operations
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The project utilizes:
+- ├──`React Query` and `Axios` for data fetching and availability.
+- ├──`Zustand` for global context.
+- ├── `rechart` for analytics and data visualization.
 
-## Expanding the ESLint configuration
+## 2. Setup Instructions
+To set up this project on your local machine, follow these steps:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v14 or later)
+- npm or yarn package manager
 
-- Configure the top-level `parserOptions` property like this:
+### Cloning the Repository
+<!-- ```sh
+git clone 
+cd product-page
+``` -->
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## 3. Dependency Installation Steps
+Install required dependencies:
+```sh
+npm install
+# or
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 4. Running Instructions
+To start the development server:
+```sh
+npm run dev
+# or
+yarn dev
+```
+The application will be available at `http://localhost:3000/`.
+
+## 5. Project Structure Documentation
+```plaintext
+product-page/
+│── src/
+│   ├── assets/            # Static assets like images
+│   ├── components/        # Reusable UI components
+│   ├──context/             # global contexts with Zustand
+│   ├── pages/             # Page components
+│   │   ├── LandingPage.tsx  # Main product page
+│   ├── utils/             # Utility functions
+│   │   ├── api/Api.ts     # API request functions
+|   |   ├── data/MockChartsData.tsx # Mock data for admin data analytics
+│   ├── App.tsx            # Main application file
+│   ├── main.tsx           # Entry point
+│── public/                # Public assets
+│── package.json           # Dependencies & scripts
+│── tsconfig.json          # TypeScript configuration
+│── README.md              # Documentation
+```
+
+## API Usage
+The product data is fetched from the [Fake Store Api](https://fakestoreapi.com/products) endpoint:
+```ts
+const BASE_URL = "https://fakestoreapi.com/products";
+
+// fetch all the products
+export const fetchProducts = async () => {
+    try {
+        const response = await axios.get(BASE_URL);
+        useProductStore.getState().setProducts(response.data)
+        return response.data;
+    } catch (error) {
+        console.error("Error fetching products:", error);
+        throw new Error("Failed to fetch products");
+    }
+};
+```
+
+## License
+This project is licensed under the MIT License.
+

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Star, StarBorder } from "@mui/icons-material";
 import "./ReviewForm.css";
+import { useReviewStore } from "../../context/useReviewStore";
 
 interface ReviewFormProps {
-  onSubmit: (rating: number, review: string) => void;
+  productId: number
 }
 
-const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
-  const [rating, setRating] = useState(0); // Default rating is 0 (no stars selected)
-  const [review, setReview] = useState("");
+const ReviewForm = ({ productId }: ReviewFormProps) => {
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState("");
+  const { addReview } = useReviewStore()
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,7 +18,10 @@ const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
       alert("Please select a rating before submitting.");
       return;
     }
-    onSubmit(rating, review);
+    addReview({productId, rating, comment})
+    alert("Product Revewed successful")
+    setRating(0)
+    setComment("")
   };
 
   // Handle star click to set the rating
@@ -51,8 +56,8 @@ const ReviewForm = ({ onSubmit }: ReviewFormProps) => {
           Review:
           <textarea
           className="review_text_area"
-            value={review}
-            onChange={(e) => setReview(e.target.value)}
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
             placeholder="Write your review here..."
             required
           ></textarea>
