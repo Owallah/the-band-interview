@@ -7,13 +7,6 @@
     margin-bottom: var(--mb-1);
   }
   
-  .featured_content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--mb-1);
-  }
-  
   .featured_title {
     font-size: var(--h1-font-size);
     color: var(--title-color);

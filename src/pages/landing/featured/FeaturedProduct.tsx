@@ -13,15 +13,30 @@ const FeaturedProduct = () => {
     <div className="featured_product">
       <div className="featured_content">
         <h2 className="featured_title">Featured Product</h2>
-        <img
-          src={featuredProduct.image}
-          alt={featuredProduct.title}
-          className="featured_image"
-        />
-        <h3 className="featured_product_title">{featuredProduct.title}</h3>
-        <p className="featured_product_price">Ksh.{featuredProduct.price * 120}</p>
-        <p className="featured_product_description">{featuredProduct.description}</p>
-        <a href="#products" className="button">Shop Now</a>
+        <div className="featured_content_container flexCenter">
+          
+          <div className="featured_content_container_text">
+            <h3 className="featured_product_title">{featuredProduct.title}</h3>
+            <p className="featured_product_price">
+              Ksh.{featuredProduct.price * 120}
+            </p>
+            <p className="featured_product_description">
+              {featuredProduct.description}
+            </p>
+          </div>
+
+          <div className="featured_content_container_image">
+            <img
+              src={featuredProduct.image}
+              alt={featuredProduct.title}
+              className="featured_image"
+            />
+          </div>
+        </div>
+
+        <a href="#products" className="button">
+          Shop Now
+        </a>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
-import { useQuery, useMutation } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import "./AdminDashboard.css";
-import { fetchProducts, deleteProduct } from "../../../utils/api/Api";
+import { deleteProduct } from "../../../utils/api/Api";
 import {
   AddOutlined,
   DeleteOutline,
@@ -19,11 +19,11 @@ const AdminDashboard = () => {
   const { products, deleteProduct: deleteLocalProduct } = useProductStore()
   const [deleteId, setDeleteId] = useState<number | null>(null);
 
-  // Fetch products
-  useQuery({
-    queryKey: ["products"],
-    queryFn: fetchProducts,
-  });
+  // // Fetch products
+  // useQuery({
+  //   queryKey: ["products"],
+  //   queryFn: fetchProducts,
+  // });
 
   // Delete product mutation
   const deleteMutation = useMutation({

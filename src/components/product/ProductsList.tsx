@@ -1,29 +1,27 @@
 import { useState } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchProducts } from "../../utils/api/Api";
 import ProductCard from "./ProductCard";
-import LoadingSpinner from "../load/LoadSpinner";
-import ErrorDisplay from "../error/ErrorDisplay";
+import { useProductStore } from "../../context/useProductStore";
 
 const ProductList = () => {
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["products"],
-    queryFn: fetchProducts,
-  });
+  // const { data, isLoading, isError, error } = useQuery({
+  //   queryKey: ["products"],
+  //   queryFn: fetchProducts,
+  // });
 
   // State for search, filter, and sort
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [sortOrder, setSortOrder] = useState("default");
+  const { products } = useProductStore()
 
-  if (isLoading) return <LoadingSpinner />;
-  if (isError) return <ErrorDisplay error={error} />;
+  // if (isLoading) return <LoadingSpinner />;
+  // if (isError) return <ErrorDisplay error={error} />;
 
   // Get unique categories for the filter dropdown
-  const categories = [...new Set(data.map((product: any) => product.category))];
+  const categories = [...new Set(products.map((product: any) => product.category))];
 
   // Filter and sort products
-  const filteredProducts = data
+  const filteredProducts = products
     .filter((product: any) => {
       const matchesSearch =
         product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

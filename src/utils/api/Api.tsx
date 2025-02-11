@@ -30,7 +30,8 @@ export const fetchProductByID = async (id: number) => {
 export const addNewProduct = async (product: any) => {
     try {
         const response = await axios.post(BASE_URL, product);
-        useProductStore.getState().addProduct(response.data)
+        // useProductStore.getState().addProduct(response.data)
+        console.log(response.data);
         return response.data;
     } catch (error) {
         console.error("Error adding new product:", error);

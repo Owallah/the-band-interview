@@ -5,10 +5,10 @@ import { useQuery } from "@tanstack/react-query";
 import { useCartStore } from "../../context/useCartStore";
 import LoadingSpinner from "../../components/load/LoadSpinner";
 import ErrorDisplay from "../../components/error/ErrorDisplay";
-import ProductCard from "../../components/product/ProductCard";
-import { AddShoppingCartOutlined, Star, StarBorder } from "@mui/icons-material";
+import { Star, StarBorder } from "@mui/icons-material";
 import ReviewForm from "../../components/reviews/ReviewForm";
 import { useReviewStore } from "../../context/useReviewStore";
+import ProductViewCard from "./ProductViewCard";
 
 
 const ProductPage = () => {
@@ -28,22 +28,7 @@ const ProductPage = () => {
   return (
     <div className="container">
       <div className="product_details">
-        <ProductCard product={data} />
-        <div
-          className="button"
-          onClick={() =>
-            addToCart({
-              id: data.id,
-              title: data.title,
-              price: data.price,
-              image: data.image,
-              quantity: 1,
-            })
-          }
-        >
-          Add To Cart
-          <AddShoppingCartOutlined />
-        </div>
+        <ProductViewCard product={data} addToCart={addToCart} />
       </div>
       <ReviewForm productId={Number(id)} />
 

@@ -128,11 +128,13 @@ img {
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: var(--title-color-dark);
+  background-color: var(--container-color);
+  color: var(--title-color-dark);
+  border: 1px solid var(--title-color);
 }
 
 .button_icon {
